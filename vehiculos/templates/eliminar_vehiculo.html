@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+	<form action="" method="post">{%csrf_token %}
+		<h1> Esta seguro que desea remover {{ carro.marca }} ? </h1>
+		<input type="submit" value="Si" /> 	
+	</form>
+{% endblock %}

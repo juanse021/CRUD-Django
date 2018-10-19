@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Editar{% endblock %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                            <h5>Editar</h5>
+                            <div class="divider"></div>
+                                <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                    {{ form.as_p }}
+                                    <div class="divider"></div>
+                                    <div class="section">
+                                        <button class="waves-effect waves-light btn blue darken-1">
+                                            <i class="material-icons right">send</i>
+                                            Editar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
