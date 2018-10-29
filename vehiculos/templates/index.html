@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="row">
-                            <h5>Dashboard</h5>
+                            <span class="card-title grey-text text-darken-2">Lista de vehiculos</span>
                             <div class="divider"></div>
                             {% for carro in carros %}
                             <div class="col s12 m6 l3">
@@ -25,10 +25,10 @@
                                         <p>Precio: $ {{ carro.precio }} USD</p>
                                     </div>
                                     <div class="card-action">
-                                        <a href ="editar/{{carro.pk}}/" class="btn-floating waves-effect waves-light blue darken-1">
+                                        <a href="{% url 'vehiculos:editar-vehiculo' carro.id %}" class="btn-floating waves-effect waves-light blue darken-1">
                                             <i class="material-icons">edit</i>
                                         </a>
-                                        <a href="eliminar/{{ carro.pk }}" class="btn-floating waves-effect waves-light red darken-1">
+                                        <a href="{% url 'vehiculos:eliminar-vehiculo' carro.id %}" class="btn-floating waves-effect waves-light red darken-1">
                                             <i class="material-icons">delete</i>
                                         </a>
                                     </div>
@@ -36,9 +36,36 @@
                             </div>
                             {% endfor %}
                         </div>
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <div class="card">
+                            <div class="card-content">
+                                <p>Hola caserola</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+       $('.modal').modal();
+    });
+</script>    
+{% endblock %}
+
 {% endblock %}

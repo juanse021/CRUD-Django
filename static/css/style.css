@@ -32,10 +32,9 @@ form .row {
 }
 
 .material-icons {
-	color: #000000 !important;
+	color: #37474F !important;
 }
 
 .material-icons.active {
-	color: #000000 !important;
+	color: #37474F !important;
 }
-
